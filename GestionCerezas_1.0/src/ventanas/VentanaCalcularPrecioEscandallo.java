@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana donde se muestra el valor de los encandallos
+ *
+ */
 public class VentanaCalcularPrecioEscandallo {
 	private JFrame ventanaCalcularEscandallo;
 	private JTextField txtFecha, txt32, txt30, txt28, txt26, txt24, txtTotal;
@@ -22,6 +29,9 @@ public class VentanaCalcularPrecioEscandallo {
 		ventanaCalcularEscandallo.setBounds(600, 300, 600, 600);
 	}
 
+	/**
+	 * Método que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaCalcularEscandallo.setVisible(true);
 		inicializarComponentes();
@@ -29,6 +39,9 @@ public class VentanaCalcularPrecioEscandallo {
 		ventanaCalcularEscandallo.setResizable(false);
 	}
 
+	/**
+	 * Método que Inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnConsultar.addActionListener((e) -> {
 			float total = 0;
@@ -62,6 +75,9 @@ public class VentanaCalcularPrecioEscandallo {
 
 	}
 
+	/**
+	 * Método que Inicializa los Componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaCalcularEscandallo.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();
@@ -185,6 +201,13 @@ public class VentanaCalcularPrecioEscandallo {
 
 	}
 
+	/**
+	 * Metodo que formatea numeros decimales
+	 * 
+	 * @param numero          (numero a Formatear)
+	 * @param numeroDecimales (Numero de decimales que deseamos que tenga)
+	 * @return numeroFormateado
+	 */
 	private float formatearDecimales(Double numero, Integer numeroDecimales) {
 		return Float.parseFloat(
 				Double.toString(Math.round(numero * Math.pow(10, numeroDecimales)) / Math.pow(10, numeroDecimales)));

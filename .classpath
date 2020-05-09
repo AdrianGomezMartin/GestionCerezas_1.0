@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="GestionCerezas_1.0/src"/>
+	<classpathentry kind="lib" path="/home/adri/eclipse-workspace/librerias/mysql-connector-java-5.1.36-bin.jar"/>
+	<classpathentry kind="output" path="GestionCerezas_1.0/bin"/>
+</classpath>

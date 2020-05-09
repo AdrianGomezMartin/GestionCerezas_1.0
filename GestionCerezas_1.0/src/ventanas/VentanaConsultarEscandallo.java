@@ -11,6 +11,12 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la consulta de los kilos
+ */
 public class VentanaConsultarEscandallo {
 	private JFrame ventanaConsultaEscandallo;
 	private JTextField txtFecha, txt32, txt30, txt28, txt26, txt24;
@@ -22,6 +28,9 @@ public class VentanaConsultarEscandallo {
 		ventanaConsultaEscandallo.setBounds(600, 300, 600, 600);
 	}
 
+	/**
+	 * Metodo que inicializa la Ventana
+	 */
 	public void Inicializar() {
 		ventanaConsultaEscandallo.setVisible(true);
 		inicializarComponentes();
@@ -29,6 +38,9 @@ public class VentanaConsultarEscandallo {
 		ventanaConsultaEscandallo.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnConsultar.addActionListener((e) -> {
 			float precios[] = GestionBBDD.obtenerEscandallo(txtFecha.getText().toString());
@@ -54,6 +66,9 @@ public class VentanaConsultarEscandallo {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaConsultaEscandallo.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();

@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la consulta de Precios
+ *
+ */
 public class VentanaConsultaPrecios {
 	private JFrame ventanaConsultaPrecios;
 	private JTextField txtFecha, txt32, txt30, txt28, txt26, txt24;
@@ -22,6 +29,9 @@ public class VentanaConsultaPrecios {
 		ventanaConsultaPrecios.setBounds(600, 300, 600, 600);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaConsultaPrecios.setVisible(true);
 		inicializarComponentes();
@@ -29,14 +39,17 @@ public class VentanaConsultaPrecios {
 		ventanaConsultaPrecios.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnConsultar.addActionListener((e) -> {
-			float [] precios = GestionBBDD.obtenerPrecios(txtFecha.getText().toString());
-			txt32.setText(Float.toString(precios[0])+" €");
-			txt30.setText(Float.toString(precios[1])+" €");
-			txt28.setText(Float.toString(precios[2])+" €");
-			txt26.setText(Float.toString(precios[3])+" €");
-			txt24.setText(Float.toString(precios[4])+" €");
+			float[] precios = GestionBBDD.obtenerPrecios(txtFecha.getText().toString());
+			txt32.setText(Float.toString(precios[0]) + " €");
+			txt30.setText(Float.toString(precios[1]) + " €");
+			txt28.setText(Float.toString(precios[2]) + " €");
+			txt26.setText(Float.toString(precios[3]) + " €");
+			txt24.setText(Float.toString(precios[4]) + " €");
 		});
 		btnLimpiarCampos.addActionListener((e) -> {
 			txt32.setText(null);
@@ -54,6 +67,9 @@ public class VentanaConsultaPrecios {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaConsultaPrecios.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();

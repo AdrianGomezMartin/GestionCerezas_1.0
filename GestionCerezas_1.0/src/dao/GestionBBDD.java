@@ -8,8 +8,21 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Esta clase realiza todas las operaciones en la BBDD
+ *
+ */
 public class GestionBBDD {
-
+	/**
+	 * Método que inserta los precios en la BBDD
+	 * 
+	 * @param fecha   (fecha de los precios )
+	 * @param precios (array de decimales que va desde los precios del 32 hasta los
+	 *                del 24)
+	 */
 	public static void insertarPrecios(String fecha, float[] precios) {
 		try {
 			Connection conexion = Conexion.getConexion();
@@ -30,6 +43,13 @@ public class GestionBBDD {
 		}
 	}
 
+	/**
+	 * Metodo que inserta los kilos en la BBDD
+	 * 
+	 * @param fecha (fecha cuando ingresamos los kilos)
+	 * @param kilos ((array de decimales que va desde los kilos del 32 hasta los del
+	 *              24)
+	 */
 	public static void insertarEscandallo(String fecha, float[] kilos) {
 		try {
 			Connection conexion = Conexion.getConexion();
@@ -50,6 +70,11 @@ public class GestionBBDD {
 		}
 	}
 
+	/**
+	 * Método que elimina los precios de la BBDD
+	 * 
+	 * @param fecha (fecha de los precios que deseamos eliminar)
+	 */
 	public static void eliminarPrecios(String fecha) {
 		try {
 			Connection conexion = Conexion.getConexion();
@@ -65,6 +90,11 @@ public class GestionBBDD {
 		}
 	}
 
+	/**
+	 * Metodo que elimina los kilos de la BBDD
+	 * 
+	 * @param fecha (fecha de los kilos que deseamos eliminar)
+	 */
 	public static void eliminarEscandallo(String fecha) {
 		try {
 			Connection conexion = Conexion.getConexion();
@@ -80,6 +110,12 @@ public class GestionBBDD {
 		}
 	}
 
+	/**
+	 * Metodo que consulta en la BBDD los kilos segun la fecha introducida
+	 * 
+	 * @param fecha
+	 * @return array de los kilos que hemos consultado
+	 */
 	public static float[] obtenerEscandallo(String fecha) {
 		float[] kilos = new float[5];
 		try {
@@ -104,6 +140,12 @@ public class GestionBBDD {
 		return kilos;
 	}
 
+	/**
+	 * Metodo que consulta los precios en la BBDD según la fecha introducida
+	 * 
+	 * @param fecha
+	 * @return array de los precios que hemos consultado
+	 */
 	public static float[] obtenerPrecios(String fecha) {
 		float[] precios = new float[5];
 		try {
@@ -128,6 +170,12 @@ public class GestionBBDD {
 		return precios;
 	}
 
+	/**
+	 * Método que calcula el valor de la cosecha del dia introducido
+	 * 
+	 * @param fecha
+	 * @return array con los euros según el calibre
+	 */
 	public static float[] calcularValorEscandallo(String fecha) {
 		float[] valores = new float[5];
 		try {
