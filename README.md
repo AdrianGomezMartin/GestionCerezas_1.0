@@ -12,3 +12,5 @@
 ##### Puede dar conflicto con el servicio de apache ya que el puerto 80 puede estar ocupado en cuyo caso ejecutaremos los siguientes comandos:
 #### sudo netstat -ltpn | grep :80   (este comando nos dara el id del proceso que esta ocupando el puerto 80)
 #### sudo kill id_proceso
+#### una vez hayamos subsanado este error ejecutamos 
+#### ./lampp restart
