@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la insercion de escandallos
+ *
+ */
 public class VentanaInsertarEscandallo {
 	private JFrame ventanaInsertarEscandallo;
 	private JTextField kg32, kg30, kg28, kg26, kg24, txtFecha;
@@ -22,6 +29,9 @@ public class VentanaInsertarEscandallo {
 		ventanaInsertarEscandallo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaInsertarEscandallo.setVisible(true);
 		inicializarComponentes();
@@ -29,16 +39,15 @@ public class VentanaInsertarEscandallo {
 		ventanaInsertarEscandallo.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnAceptar.addActionListener((e) -> {
-			GestionBBDD.insertarEscandallo(txtFecha.getText().toString(), 
-					new float[] {
-							Float.parseFloat(kg32.getText().toString()),
-							Float.parseFloat(kg30.getText().toString()),
-							Float.parseFloat(kg28.getText().toString()),
-							Float.parseFloat(kg26.getText().toString()),
-							Float.parseFloat(kg24.getText().toString())
-					});
+			GestionBBDD.insertarEscandallo(txtFecha.getText().toString(),
+					new float[] { Float.parseFloat(kg32.getText().toString()),
+							Float.parseFloat(kg30.getText().toString()), Float.parseFloat(kg28.getText().toString()),
+							Float.parseFloat(kg26.getText().toString()), Float.parseFloat(kg24.getText().toString()) });
 			btnLimpiar.doClick();
 		});
 		btnLimpiar.addActionListener((e) -> {
@@ -57,6 +66,9 @@ public class VentanaInsertarEscandallo {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaInsertarEscandallo.setLayout(new GridBagLayout());
 		Insets espacios = new Insets(10, 10, 10, 10);
@@ -142,14 +154,14 @@ public class VentanaInsertarEscandallo {
 		opc.gridy = 6;
 		opc.insets = espacios;
 		ventanaInsertarEscandallo.add(new JLabel("Inserte la fecha del escandallo (yyyy-mm-dd)"), opc);
-		
+
 		opc = new GridBagConstraints();
 		opc.gridx = 1;
 		opc.gridy = 6;
 		opc.insets = espacios;
 		opc.fill = GridBagConstraints.HORIZONTAL;
 		ventanaInsertarEscandallo.add(txtFecha, opc);
-		
+
 		espacios = new Insets(20, 20, 20, 20);
 		btnAceptar = new JButton("Aceptar");
 		opc = new GridBagConstraints();

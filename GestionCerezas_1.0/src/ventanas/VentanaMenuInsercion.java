@@ -7,6 +7,12 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Adrián Gómez
+ *
+ *         Ventana que gestiona el menu de insercion
+ */
 public class VentanaMenuInsercion {
 	private JFrame ventanaMenuInsercion;
 	private JButton btnInsertarPrecios, btnInsertarEscandallo, btnVolver;
@@ -17,6 +23,9 @@ public class VentanaMenuInsercion {
 		ventanaMenuInsercion.setBounds(600, 300, 500, 500);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaMenuInsercion.setVisible(true);
 		inicializarComponentes();
@@ -24,6 +33,9 @@ public class VentanaMenuInsercion {
 		ventanaMenuInsercion.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnInsertarEscandallo.addActionListener((e) -> {
 			VentanaInsertarEscandallo ventanaInsertarEscandallo = new VentanaInsertarEscandallo();
@@ -42,6 +54,9 @@ public class VentanaMenuInsercion {
 		});
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaMenuInsercion.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();

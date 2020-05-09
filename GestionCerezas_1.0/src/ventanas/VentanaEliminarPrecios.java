@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la eliminacion de precios
+ *
+ */
 public class VentanaEliminarPrecios {
 	private JFrame ventanaEliminarPrecios;
 	private JButton btnEliminar, btnVolver;
@@ -22,6 +29,9 @@ public class VentanaEliminarPrecios {
 		ventanaEliminarPrecios.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Metodo que incializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaEliminarPrecios.setVisible(true);
 		inicializarComponentes();
@@ -41,6 +51,9 @@ public class VentanaEliminarPrecios {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaEliminarPrecios.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();

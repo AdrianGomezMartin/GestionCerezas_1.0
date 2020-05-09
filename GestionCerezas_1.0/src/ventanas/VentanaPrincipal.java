@@ -9,6 +9,12 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Adrián Gómez
+ *
+ *         Ventana que gestiona el menú principal
+ */
 public class VentanaPrincipal {
 	private JFrame ventana;
 	private JButton[] botones = new JButton[3];
@@ -20,18 +26,23 @@ public class VentanaPrincipal {
 		ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventana.setVisible(true);
 		inicializarComponentes();
 		inicializarListeners();
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventana.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();
 		for (int i = 0; i < botones.length; i++) {
-			botones[i] = new JButton(
-					i == 0 ? "Añadir Datos" : i == 1 ? "Eliminar Datos" : "Consultar Datos");
+			botones[i] = new JButton(i == 0 ? "Añadir Datos" : i == 1 ? "Eliminar Datos" : "Consultar Datos");
 			opc.gridx = 0;
 			opc.gridy = i;
 			opc.fill = GridBagConstraints.BOTH;
@@ -41,6 +52,9 @@ public class VentanaPrincipal {
 		ventana.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		for (i = 0; i < botones.length; i++) {
 			botones[i].addActionListener(new ActionListener() {

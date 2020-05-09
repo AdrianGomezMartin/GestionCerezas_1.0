@@ -11,6 +11,14 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la eliminacion de precios y escandallos
+ *         simultaneámente
+ *
+ */
 public class VentanaEliminarPreciosEscandallos {
 	private JFrame ventanaEliminarPreciosEscandallos;
 	private JButton btnEliminar, btnVolver;
@@ -22,13 +30,19 @@ public class VentanaEliminarPreciosEscandallos {
 		ventanaEliminarPreciosEscandallos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaEliminarPreciosEscandallos.setVisible(true);
 		inicializarComponentes();
 		inicializarListeners();
 		ventanaEliminarPreciosEscandallos.setResizable(false);
 	}
-	
+
+	/**
+	 * Metodo que inicializa todos los botones
+	 */
 	private void inicializarListeners() {
 		btnEliminar.addActionListener((e) -> {
 			GestionBBDD.eliminarEscandallo(txtFecha.getText().toString());
@@ -41,6 +55,9 @@ public class VentanaEliminarPreciosEscandallos {
 		});
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaEliminarPreciosEscandallos.setLayout(new GridBagLayout());
 		GridBagConstraints opc = new GridBagConstraints();

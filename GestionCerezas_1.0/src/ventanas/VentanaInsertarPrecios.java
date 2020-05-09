@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona la inserción de precios
+ *
+ */
 public class VentanaInsertarPrecios {
 	private JFrame ventanaInsercion;
 	private JTextField txt24, txt26, txt28, txt30, txt32, txtFecha;
@@ -23,22 +30,25 @@ public class VentanaInsertarPrecios {
 
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaInsercion.setVisible(true);
 		inicializarComponentes();
 		inicializarListeners();
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnAceptar.addActionListener((e) -> {
 			GestionBBDD.insertarPrecios(txtFecha.getText().toString(),
-					new float[] {
-							Float.parseFloat(txt32.getText().toString()),
-							Float.parseFloat(txt30.getText().toString()),
-							Float.parseFloat(txt28.getText().toString()),
+					new float[] { Float.parseFloat(txt32.getText().toString()),
+							Float.parseFloat(txt30.getText().toString()), Float.parseFloat(txt28.getText().toString()),
 							Float.parseFloat(txt26.getText().toString()),
-							Float.parseFloat(txt24.getText().toString()) 
-					});
+							Float.parseFloat(txt24.getText().toString()) });
 			btnLimpiar.doClick();
 
 		});
@@ -57,6 +67,9 @@ public class VentanaInsertarPrecios {
 		});
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaInsercion.setLayout(new GridBagLayout());
 		Insets espacios = new Insets(10, 10, 10, 10);

@@ -11,6 +11,12 @@ import javax.swing.JTextField;
 
 import dao.GestionBBDD;
 
+/**
+ * 
+ * @author Adrián Gómez
+ *
+ *         Ventana que gestiona la eliminación de escandallos
+ */
 public class VentanaEliminarEscandallo {
 	private JFrame ventanaEliminarEscandallo;
 	private JTextField txtFecha;
@@ -22,6 +28,9 @@ public class VentanaEliminarEscandallo {
 		ventanaEliminarEscandallo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaEliminarEscandallo.setVisible(true);
 		inicializarComponentes();
@@ -29,6 +38,9 @@ public class VentanaEliminarEscandallo {
 		ventanaEliminarEscandallo.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnVolver.addActionListener((e) -> {
 			VentanaEliminar ventanaEliminar = new VentanaEliminar();
@@ -41,15 +53,17 @@ public class VentanaEliminarEscandallo {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaEliminarEscandallo.setLayout(new GridBagLayout());
 		Insets espacios = new Insets(10, 10, 10, 10);
 		GridBagConstraints opc = new GridBagConstraints();
 		opc.gridx = 0;
 		opc.gridy = 0;
-		//opc.insets = espacios;
-		ventanaEliminarEscandallo.add(new JLabel("Inserte la fecha del escandallo (yyyy-mm-dd)"),
-				opc);
+		// opc.insets = espacios;
+		ventanaEliminarEscandallo.add(new JLabel("Inserte la fecha del escandallo (yyyy-mm-dd)"), opc);
 
 		opc = new GridBagConstraints();
 		txtFecha = new JTextField("", 10);

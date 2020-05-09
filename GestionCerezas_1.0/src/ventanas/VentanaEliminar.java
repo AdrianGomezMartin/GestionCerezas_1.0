@@ -7,6 +7,13 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author Adrián Gómez
+ * 
+ *         Ventana que gestiona el menú para eliminar datos
+ *
+ */
 public class VentanaEliminar {
 	private JFrame ventanaEliminar;
 	private JButton btnEliminarEscandallo, btnEliminarPrecios, btnEliminarPreciosEscandallo, btnVolver;
@@ -17,6 +24,9 @@ public class VentanaEliminar {
 		ventanaEliminar.setBounds(600, 300, 500, 500);
 	}
 
+	/**
+	 * Metodo que inicializa la ventana
+	 */
 	public void Inicializar() {
 		ventanaEliminar.setVisible(true);
 		inicializarComponentes();
@@ -24,6 +34,9 @@ public class VentanaEliminar {
 		ventanaEliminar.setResizable(false);
 	}
 
+	/**
+	 * Metodo que inicializa los Listeners de todos los botones
+	 */
 	private void inicializarListeners() {
 		btnEliminarEscandallo.addActionListener((e) -> {
 			VentanaEliminarEscandallo ventanaEliminarEscandallo = new VentanaEliminarEscandallo();
@@ -48,6 +61,9 @@ public class VentanaEliminar {
 
 	}
 
+	/**
+	 * Metodo que inicializa los componentes de la Ventana
+	 */
 	private void inicializarComponentes() {
 		ventanaEliminar.setLayout(new GridBagLayout());
 		Insets espacios = new Insets(20, 20, 20, 20);
@@ -70,7 +86,7 @@ public class VentanaEliminar {
 		opc = new GridBagConstraints();
 		opc.gridx = 0;
 		opc.gridy = 2;
-		//opc.insets = espacios;
+		// opc.insets = espacios;
 		ventanaEliminar.add(btnEliminarPreciosEscandallo, opc);
 
 		btnVolver = new JButton("Volver");
