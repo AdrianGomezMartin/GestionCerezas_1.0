@@ -4,7 +4,7 @@
 ### Para el correcto funcionamiento de la base de datos se recomienda tener instalado XAMPP en Windows o LAMPP en Linux
 #
 ## Pasos para configurar BBDD en Windows : 
-### Iniciar en XAMPP servidor Apache y MYSQL una vez iniciados ambos servicios acceder a la dirección http://127.0.0.1/phpmyadmin una vez ahi ejecutar script crear BBDD 
+### Iniciar en XAMPP servidor Apache y MYSQL una vez iniciados ambos servicios acceder a la dirección http://127.0.0.1/phpmyadmin una vez ahi ejecutar script crearBBDD.sql 
 #
 ## En Linux ejecutar los comandos : 
 #### cd /opt/lampp/ 
