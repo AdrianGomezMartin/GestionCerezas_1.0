@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  * @author Adrián Gómez
  * 
  *         Esta clase realiza todas las operaciones en la BBDD
+ *         TODO:  	Modificar clases para que los escandallos vayan relacionados a una parcela
  *
  */
 public class GestionBBDD {
